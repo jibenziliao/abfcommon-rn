@@ -8,3 +8,9 @@
 ###### [7.react-native-root-toast](https://github.com/magicismight/react-native-root-toast)
 ###### [8.react-native-scrollable-tab-view](https://github.com/skv-headless/react-native-scrollable-tab-view)
 ###### [9.react-native-vector-icons](https://github.com/oblador/react-native-vector-icons)
+
+
+
+
+### 源代码借鉴
+[GaGaMall](https://github.com/jiangqqlmj/GaGaMall)

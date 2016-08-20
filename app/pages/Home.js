@@ -25,7 +25,7 @@ var Icon = require('react-native-vector-icons/FontAwesome');
 var {height, width} = Dimensions.get('window');
 var item_width = (width-1)/2;
 
-const homeLocation = (<Icon name="location-arrow" size={18} color="#fff" />);
+const homeLocation = (<Icon name="paper-plane" size={18} color="#fff" />);
 const homeSearch = (<Icon name="search" size={18} color="#fff" />);
 
 const BANNER_IMGS = [
@@ -86,20 +86,21 @@ class Home extends Component {
         return (
             <View style={[theme.appbody]}>
                 <View style={[theme.bar]}>
-                    <View style={{flex:1,justifyContent:'center'}}>
+                    <View style={[theme.barleft]}>
                         <TouchableOpacity onPress={()=>{this.topItemAction(0)}}>
                             <View style={{justifyContent:'flex-start',flexDirection:'row',alignItems:'center'}}>
-                                <Text style={{color:'white',fontSize:13,marginLeft:3}}>{homeLocation}</Text>
-                                <Text style={{color:'white',fontSize:13,marginLeft:3}}>定位中</Text>
+                                <Text style={[theme.bartitle]}>{homeLocation}</Text>
                             </View>
                         </TouchableOpacity>
                     </View>
-                    <View style={{flex:1,alignItems:'center',justifyContent:'center'}}>
-                        <Text style={{color:'white',fontSize:18,marginLeft:3}}>基础应用</Text>
+                    <View style={[theme.barcenter]}>
+                        <Text style={[theme.bartitle]}>基础应用</Text>
                     </View>
-                    <View style={{justifyContent:'flex-end',alignItems:'center',flex:1,flexDirection:'row'}}>
+                    <View style={[theme.barright]}>
                         <TouchableOpacity onPress={()=>{this.topItemAction(1)}}>
-                            <Text style={{color:'white',fontSize:13,marginLeft:3}}>{homeSearch}</Text>
+                            <View>
+                                <Text style={[theme.bartitle]}>{homeSearch}</Text>
+                            </View>
                         </TouchableOpacity>
                     </View>
                 </View>
