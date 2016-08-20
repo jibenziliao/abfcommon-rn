@@ -1,5 +1,5 @@
 /**
- * 商城主框架界面
+ * 框架主界面
  */
 'use strict';
 import React, {Component} from 'react';
@@ -32,41 +32,41 @@ class AppMain extends Component {
 			  <TabNavigator.Item
 			  	title="主页"
 			    selected={this.state.selectedTab === 'home'}
-			    selectedTitleStyle={styles.tabnavselectedStyle}
-			    titleStyle={styles.textStyle}
+			    selectedTitleStyle={theme.tabnavselectedStyle}
+			    titleStyle={theme.textStyle}
 			    renderIcon={() => (<Icon name="home" size={24} style={[theme.tabnav]}/>)}
 			    renderSelectedIcon={() => (<Icon name="home" size={24} style={[theme.tabnavselectedStyle]}/>)}
-			    onPress={() => this.setState({ selectedTab: 'home' })}>
+			    onPress={() => this.setState({ selectedTab: 'home'})}>
 			    <Home {...this.props}/>
 			  </TabNavigator.Item>
 			  <TabNavigator.Item
 			  	title="订单"
 			    selected={this.state.selectedTab === 'order'}
-			    selectedTitleStyle={styles.tabnavselectedStyle}
-			    titleStyle={styles.textStyle}
-                renderIcon={() => (<Icon name="file-text-o" size={24} style={[theme.tabnav]}/>)}
-			    renderSelectedIcon={() => (<Icon name="file-text-o" size={24} style={[theme.tabnavselectedStyle]}/>)}
-			    onPress={() => this.setState({ selectedTab: 'order' })}>
+			    selectedTitleStyle={theme.tabnavselectedStyle}
+			    titleStyle={theme.textStyle}
+                renderIcon={() => (<Icon name="tags" size={24} style={[theme.tabnav]}/>)}
+			    renderSelectedIcon={() => (<Icon name="tags" size={24} style={[theme.tabnavselectedStyle]}/>)}
+			    onPress={() => this.setState({ selectedTab: 'order'})}>
 			    <Order {...this.props}/>
 			  </TabNavigator.Item>
 			  <TabNavigator.Item
 			  	title="购物车"
 			    selected={this.state.selectedTab === 'cart'}
-			    selectedTitleStyle={styles.tabnavselectedStyle}
-			    titleStyle={styles.textStyle}
-                renderIcon={() => (<Icon name="shoping-cart" size={24} style={[theme.tabnav]}/>)}
-			    renderSelectedIcon={() => (<Icon name="shoping-cart" size={24} style={[theme.tabnavselectedStyle]}/>)}
-			    onPress={() => this.setState({ selectedTab: 'cart' })}>
+			    selectedTitleStyle={theme.tabnavselectedStyle}
+			    titleStyle={theme.textStyle}
+                renderIcon={() => (<Icon name="shopping-cart" size={24} style={[theme.tabnav]}/>)}
+			    renderSelectedIcon={() => (<Icon name="shopping-cart" size={24} style={[theme.tabnavselectedStyle]}/>)}
+			    onPress={() => this.setState({ selectedTab: 'cart'})}>
 			    <Cart {...this.props}/>
 			  </TabNavigator.Item>
 			  <TabNavigator.Item
 			  	title="我的"
 			    selected={this.state.selectedTab === 'center'}
-			    selectedTitleStyle={styles.tabnavselectedStyle}
-			    titleStyle={styles.textStyle}
+			    selectedTitleStyle={theme.tabnavselectedStyle}
+			    titleStyle={theme.textStyle}
                 renderIcon={() => (<Icon name="user" size={24} style={[theme.tabnav]}/>)}
 			    renderSelectedIcon={() => (<Icon name="user" size={24} style={[theme.tabnavselectedStyle]}/>)}
-			    onPress={() => this.setState({ selectedTab: 'center' })}>
+			    onPress={() => this.setState({ selectedTab: 'center'})}>
 			    <Center {...this.props}/>
 			  </TabNavigator.Item>
 			</TabNavigator>
@@ -74,15 +74,6 @@ class AppMain extends Component {
     }
 }
 const styles=StyleSheet.create({
-   iconStyle:{
-       width:26,
-       height:26,
-   },
-   textStyle:{
-       color:'#999',
-   },
-   selectedTextStyle:{
-       color:'#8192D6',
-   }
+
 });
 export default AppMain;
