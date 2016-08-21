@@ -18,22 +18,29 @@ module.exports = StyleSheet.create({
         justifyContent:'flex-start',
         alignItems:'center',
         flex:1,
-        marginLeft:12,
-        padding: 10,
-        flexDirection:'row'
+        marginLeft: 6,
+        flexDirection:'row',
+        paddingTop: 12,
+        paddingBottom: 12,
+        paddingLeft: 8,
+        paddingRight: 8
     },
     barcenter:{
         flex:1,
         alignItems:'center',
         justifyContent:'center',
+        flexDirection:'row',
     },
     barright:{
         justifyContent:'flex-end',
         alignItems:'center',
         flex:1,
-        marginRight:12,
-        padding: 10,
-        flexDirection:'row'
+        marginRight: 6,
+        flexDirection: 'row',
+        paddingTop: 12,
+        paddingBottom: 12,
+        paddingLeft: 8,
+        paddingRight: 8
     },
     bartitle:{
         color:'white',

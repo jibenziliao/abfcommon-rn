@@ -25,8 +25,8 @@ var Icon = require('react-native-vector-icons/FontAwesome');
 var {height, width} = Dimensions.get('window');
 var item_width = (width-1)/2;
 
-const homeLocation = (<Icon name="paper-plane" size={18} color="#fff" />);
-const homeSearch = (<Icon name="search" size={18} color="#fff" />);
+const homeLocation = (<Icon name="paper-plane" size={20} color="#fff" />);
+const homeSearch = (<Icon name="search" size={20} color="#fff" />);
 
 const BANNER_IMGS = [
     require('../imgs/home/1.jpg'),
