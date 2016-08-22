@@ -1,6 +1,6 @@
 'use strict';
 import React, {Component} from 'react';
-import{ 
+import{
     View,
     Text,
     BackAndroid,
@@ -21,7 +21,7 @@ var verifyCode = '';
 class Login extends Component {
   constructor(props) {
       super(props);
-      this.buttonBackAction=this.buttonBackAction.bind(this);    
+      this.buttonBackAction=this.buttonBackAction.bind(this);
       this.queryVerifyCode=this.queryVerifyCode.bind(this);
       this.resetSuccesAction=this.resetSuccesAction.bind(this);
       this.buttonChangeState=this.buttonChangeState.bind(this);
@@ -35,7 +35,7 @@ class Login extends Component {
 
   }
   queryVerifyCode(){
-      
+
   }
   resetSuccesAction(){
 
@@ -44,21 +44,21 @@ class Login extends Component {
         return (
              <View style={{backgroundColor:'#f5f5f5',flex:1}}>
                 <View style={{height:48,backgroundColor:'black',flexDirection:'row'}}>
-                    <TouchableOpacity onPress={() => {this.buttonBackAction()}} 
+                    <TouchableOpacity onPress={() => {this.buttonBackAction()}}
                                       style={{width:48,height:48,alignItems:'center',justifyContent:'center'}}>
-                       <Image 
+                       <Image
                           style={{width:13,height:20}}
                           source={require('../../imgs/ic_center_back.png')}
                        />
-                    </TouchableOpacity>  
+                    </TouchableOpacity>
                     <View style={{flex:1,alignItems:'center',justifyContent:'center'}}>
-                       <Text style={{fontSize:18,color:'white',alignSelf:'center'}}>重置密码</Text>   
+                       <Text style={{fontSize:18,color:'white',alignSelf:'center'}}>重置密码</Text>
                     </View>
-                    <View style={{white:48,height:48}}/>  
+                    <View style={{white:48,height:48}}/>
                 </View>
                 <View style={{backgroundColor:'white',marginTop:13}}>
                     <View style={{flexDirection:'row',height:45,alignItems:'center'}}>
-                          <TextInput 
+                          <TextInput
                             style={{height:40,fontSize: 15,textAlign: 'left',textAlignVertical:'center',flex:1}}
                             placeholder="请输入手机号码"
                             placeholderTextColor="#aaaaaa"
@@ -74,7 +74,7 @@ class Login extends Component {
                     </View>
                     <ShortLineTwo/>
                     <View style={{flexDirection:'row',height:45,alignItems:'center'}}>
-                          <TextInput 
+                          <TextInput
                             style={{height:40,fontSize: 15,textAlign: 'left',textAlignVertical:'center',flex:1}}
                             placeholder="请输入验证码"
                             placeholderTextColor="#aaaaaa"
@@ -87,34 +87,34 @@ class Login extends Component {
                                verifyCode = text;
                             }}
                            />
-                          <TouchableOpacity onPress={() => {this.queryVerifyCode()}} 
+                          <TouchableOpacity onPress={() => {this.queryVerifyCode()}}
                                             style={{width:100,height:45,alignItems:'center',justifyContent:'center'}}>
                                 <Text style={{fontSize:13,color:'#777'}}>获取验证码</Text>
                           </TouchableOpacity>
                     </View>
                     <ShortLineTwo/>
                     <View style={{flexDirection:'row',height:45,alignItems:'center'}}>
-                          <TextInput 
+                          <TextInput
                             style={{height:40,fontSize: 15,textAlign: 'left',textAlignVertical:'center',flex:1}}
                             placeholder="请输入密码(6位以上字符)"
                             placeholderTextColor="#aaaaaa"
                             underlineColorAndroid="transparent"
                             numberOfLines={1}
-                            ref={'username'}
+                            ref={'password'}
                             multiline={true}
                             autoFocus={true}
                             onChangeText={(text) => {
-                               username = text;
+                               password = text;
                             }}
                            />
                           <TouchableOpacity onPress={() => {this.buttonChangeState(0)}} style={{width:45,height:45,alignItems:'center',justifyContent:'center'}}>
-                                <Image source={require('../../imgs/logre/ic_pwd_off.png')} 
+                                <Image source={require('../../imgs/logre/ic_pwd_off.png')}
                                         style={{width:17,height:14,marginLeft:13}}/>
                           </TouchableOpacity>
                     </View>
                     <ShortLineTwo/>
                     <View style={{flexDirection:'row',height:45,alignItems:'center'}}>
-                          <TextInput 
+                          <TextInput
                             style={{height:40,fontSize: 15,textAlign: 'left',textAlignVertical:'center',flex:1}}
                             placeholder="请再输入一遍密码"
                             placeholderTextColor="#aaaaaa"
@@ -128,14 +128,14 @@ class Login extends Component {
                             }}
                            />
                           <TouchableOpacity onPress={() => {this.buttonChangeState(1)}} style={{width:45,height:45,alignItems:'center',justifyContent:'center'}}>
-                                <Image source={require('../../imgs/logre/ic_pwd_off.png')} 
+                                <Image source={require('../../imgs/logre/ic_pwd_off.png')}
                                         style={{width:17,height:14,marginLeft:13}}/>
                           </TouchableOpacity>
                     </View>
                 </View>
-                <TouchableOpacity onPress={() => {this.resetSuccesAction()}} 
+                <TouchableOpacity onPress={() => {this.resetSuccesAction()}}
                                   style={{justifyContent:'center',marginTop:13,alignItems:'center'}}>
-                    <Image source={require('../../imgs/logre/ic_login_btn.png')} 
+                    <Image source={require('../../imgs/logre/ic_login_btn.png')}
                            style={{width:300,height:40,justifyContent:'center',alignItems:'center'}}>
                           <Text style={{color:'white'}}>完成</Text>
                     </Image>

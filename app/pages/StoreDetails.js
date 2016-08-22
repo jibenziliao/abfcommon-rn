@@ -35,7 +35,7 @@ class StoreDetails extends Component {
       this.topItemAction=this.topItemAction.bind(this);
       this.onPressItemLeft=this.onPressItemLeft.bind(this);
       this.onPressItemRight=this.onPressItemRight.bind(this);
-      this.renderItemLeft = this.renderItemLeft.bind(this); 
+      this.renderItemLeft = this.renderItemLeft.bind(this);
       this.renderItemRight=this.renderItemRight.bind(this);
       this.collectAction=this.collectAction.bind(this);
       this.state={
@@ -48,9 +48,9 @@ class StoreDetails extends Component {
          RIGHT_ITEMS : formatStore(eval(STORE_DETAILS_DATA).data),
          DATA_ITEMS : calculateGood(eval(STORE_DETAILS_DATA).data),
          selectIndexItem : '',
-         
+
       }
-      itemMap =Object.keys(this.state.RIGHT_ITEMS);  
+      itemMap =Object.keys(this.state.RIGHT_ITEMS);
       selectedItem=itemMap[0];
   }
 
@@ -105,7 +105,7 @@ class StoreDetails extends Component {
               });
         });
   }
-  
+
   //进行渲染左侧列表数据-商品分类
   renderContentLeft(dataSource) {
     return (
@@ -121,7 +121,7 @@ class StoreDetails extends Component {
       />
     );
    }
-   //渲染右侧商品列表(带有section) 
+   //渲染右侧商品列表(带有section)
   renderContentRight(dataSource) {
     return (
       <ListView
@@ -141,8 +141,8 @@ class StoreDetails extends Component {
         <View key={sectionID} style={{backgroundColor:'#eee',height:25,justifyContent:'center'}}>
              <Text style={{marginLeft:8,fontSize:11}}>{sectionID}</Text>
         </View>
-     );   
-  } 
+     );
+  }
 
   //渲染每一项的数据
   renderItemLeft(data) {
@@ -171,8 +171,8 @@ class StoreDetails extends Component {
 
   renderItemImage(data){
      if(data.picture === ''){
-       return ( 
-            <Image source={require('../imgs/ic_center_icon.png')} style={styles.item_image} /> 
+       return (
+            <Image source={require('../imgs/ic_center_icon.png')} style={styles.item_image} />
          )
      } else {
        return (
@@ -188,8 +188,8 @@ class StoreDetails extends Component {
                 <View style={{flex:1,marginTop:10,marginBottom:10}}>
                      <Text style={{marginRight:8,color:'black'}}>{data.name}</Text>
                      <View style={{flexDirection:'row',marginTop:5}}>
-                            <Text style={{fontSize:10,color:'#aaa'}}>{data.month_saled_content}</Text> 
-                            <Text style={{marginLeft:10,fontSize:11,color:'#aaa'}}>{data.praise_content}</Text> 
+                            <Text style={{fontSize:10,color:'#aaa'}}>{data.month_saled_content}</Text>
+                            <Text style={{marginLeft:10,fontSize:11,color:'#aaa'}}>{data.praise_content}</Text>
                      </View>
                      <Text style={{color:'red',fontSize:15,marginTop:5}}>¥{data.min_price}</Text>
                 </View>
@@ -199,9 +199,9 @@ class StoreDetails extends Component {
                                   toastShort('点击添加购物车图标...');
                           }}
                           >
-                          <Image source={require('../imgs/store/ic_store_add.png')} 
+                          <Image source={require('../imgs/store/ic_store_add.png')}
                                  style={{width:20,height:20}}/>
-                     </TouchableOpacity>        
+                     </TouchableOpacity>
                 </View>
            </View>
       </TouchableOpacity>
@@ -213,35 +213,37 @@ class StoreDetails extends Component {
        <View style={{height:48,backgroundColor:'black',flexDirection:'row'}}>
                 <View style={{width:48,height:48,justifyContent:'center'}}>
                      <TouchableOpacity onPress={() => {this.buttonBackAction()}} style={{justifyContent:'center',alignItems:'center'}} >
-                           <Image 
+                           <Image
                                  style={{width:13,height:20}}
                                  source={require('../imgs/ic_center_back.png')}
                            />
-                     </TouchableOpacity>  
+                     </TouchableOpacity>
                 </View>
                 <View style={{flex:1,justifyContent:'center',alignItems:'center'}}>
                      <Text style={{color:'white',fontSize:18}}>商品列表</Text>
                 </View>
                 <View style={{width:48,height:48,justifyContent:'flex-end',alignItems:'center',flexDirection:'row'}}>
                     <TouchableOpacity onPress={()=>{this.topItemAction()}}>
-                         <Image source={require('../imgs/home/ic_home_top_search.png')} 
+                         <Image source={require('../imgs/home/ic_home_top_search.png')}
                            style={{width:24,height:24,marginRight:8,alignItems:'center'}}/>
                     </TouchableOpacity>
-                </View>  
+                </View>
           </View>
      );
   }
   //渲染商家基本信息布局
   renderStoreBaisc(){
-     const {navigator,route} = this.props; 
+     const {navigator,route} = this.props;
      return (
        <TouchableOpacity onPress={()=>{this.topItemAction()}}>
        <View style={{height: PARALLAX_HEADER_HEIGHT, flex: 1, alignItems: 'center', justifyContent: 'center' }}>
             <Image source={require('../imgs/store/ic_store_top_bg.png')} style={{width:width,height:PARALLAX_HEADER_HEIGHT}}>
                 <View style={{flexDirection:'row',marginLeft:24,height:68,alignItems:'center',marginTop:12}}>
-                     <Image source={require('../imgs/store/ic_store_default.png')} 
-                            style={{width:68,height:68,borderRadius:34}}/>
+                     <Image source={require('../imgs/store/ic_store_default.png')} style={{width:68,height:68,borderRadius:34}}/>
                      <Text style={{color:'white',fontSize:16,marginLeft:26}}>{route.data.name}</Text>
+                     <View style={{flex:1,alignItems:'flex-end',marginRight:15}}>
+                         <Image source={require('../imgs/ic_center_right_arrow.png')} style={{width:12,height:18}}/>
+                     </View>
                 </View>
                 <View style={{flexDirection:'row',justifyContent:'flex-end'}}>
                      <TouchableOpacity style={{flexDirection:'row',marginRight:10,alignItems:'center'}}
@@ -258,13 +260,13 @@ class StoreDetails extends Component {
      );
   }
   render() {
-    const {navigator,route} = this.props;  
+    const {navigator,route} = this.props;
     return (
        <View style={{flex:1}}>
          <View>
           {this.renderTopLayout()}
           {this.renderStoreBaisc()}
-        </View> 
+        </View>
           <View style={{flexDirection:'row',flex:1}}>
                 <View style={{flex:1}}>
                     {
@@ -275,9 +277,9 @@ class StoreDetails extends Component {
                <View style={{flex:3}}>
                     {this.renderContentRight(this.state.dataSource.cloneWithRowsAndSections(
                          this.state.RIGHT_ITEMS === undefined ? [] : this.state.RIGHT_ITEMS,Object.keys(this.state.RIGHT_ITEMS)))}
-               </View>   
-        </View>  
-      </View>  
+               </View>
+        </View>
+      </View>
     );
   }
 }
